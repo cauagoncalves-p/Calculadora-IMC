@@ -130,8 +130,13 @@ namespace Calculadora_IMC
                         riscoSaude = "Risco muito extremo";
                     }
 
-                    MessageBox.Show($"Idade: {idade} anos\nClassificação: {classificacao}\nRisco para a saúde: {riscoSaude}","Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimparCampos();
+                    MessageBox.Show($"Idade: {idade} anos\nSeu IMC é: {calc:f2}\nClassificação: {classificacao}\nRisco para a saúde: {riscoSaude}","Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = MessageBox.Show("Deseja refazer o calcúlo?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (DialogResult == DialogResult.Yes)
+                    {
+                        LimparCampos();
+                    }
                 }
 
             }
@@ -141,5 +146,6 @@ namespace Calculadora_IMC
             }
         }
 
+        
     }
 }

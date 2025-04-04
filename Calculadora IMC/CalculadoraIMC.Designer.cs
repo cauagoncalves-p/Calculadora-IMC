@@ -85,6 +85,7 @@
             this.txtIdade.Name = "txtIdade";
             this.txtIdade.Size = new System.Drawing.Size(270, 33);
             this.txtIdade.TabIndex = 2;
+          
             // 
             // label2
             // 
