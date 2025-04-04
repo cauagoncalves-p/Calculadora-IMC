@@ -38,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtAltura = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -137,27 +136,15 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Selecione o sexo";
             // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnLimpar.FlatAppearance.BorderSize = 0;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Location = new System.Drawing.Point(222, 528);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(80, 53);
-            this.btnLimpar.TabIndex = 6;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = false;
-       
-            // 
             // btnCalcular
             // 
             this.btnCalcular.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnCalcular.FlatAppearance.BorderSize = 0;
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalcular.Location = new System.Drawing.Point(33, 528);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(80, 53);
+            this.btnCalcular.Size = new System.Drawing.Size(269, 53);
             this.btnCalcular.TabIndex = 5;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = false;
@@ -184,7 +171,6 @@
             this.ClientSize = new System.Drawing.Size(349, 593);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCalcular);
-            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.label3);
@@ -215,7 +201,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Button btnSair;
     }

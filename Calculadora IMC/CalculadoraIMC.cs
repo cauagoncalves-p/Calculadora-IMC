@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,7 +23,7 @@ namespace Calculadora_IMC
             foreach ( Control botao  in this.Controls)
             {
                 if (botao is Button btn) {
-                    if (btn == btnLimpar || btn == btnSair || btn == btnCalcular) 
+                    if (btn == btnSair || btn == btnCalcular) 
                     {
                         continue;
                     }
@@ -31,6 +32,28 @@ namespace Calculadora_IMC
             }
             botaoclicado.BackColor = Color.Green;  
         }
+
+        private void resetarCor() 
+        {
+            foreach (Control botao in this.Controls) 
+            {
+                if (botao is Button btn) {
+                    if (btn == btnSair || btn == btnCalcular) 
+                    {
+                        continue;
+                    }
+                    btn.BackColor = SystemColors.Control; 
+                }
+            }
+        }
+        private void LimparCampos() 
+        {
+            txtAltura.Clear();
+            txtIdade.Clear();
+            txtPeso.Clear();
+            resetarCor();
+        }
+
 
         private void btnMulher_Click(object sender, EventArgs e)
         {
@@ -63,6 +86,11 @@ namespace Calculadora_IMC
                 int idade = Convert.ToInt32(txtIdade.Text);
                 double peso = Convert.ToDouble(txtPeso.Text);
                 double altura = Convert.ToDouble(txtAltura.Text);
+
+                if (!(altura % 1 != 0)) 
+                {
+                    altura = altura / 100;
+                }
 
                 // Calculando o IMC
                 double calc = peso / Math.Pow(altura, 2);
@@ -103,6 +131,7 @@ namespace Calculadora_IMC
                     }
 
                     MessageBox.Show($"Idade: {idade} anos\nClassificação: {classificacao}\nRisco para a saúde: {riscoSaude}","Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimparCampos();
                 }
 
             }
@@ -112,9 +141,5 @@ namespace Calculadora_IMC
             }
         }
 
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
